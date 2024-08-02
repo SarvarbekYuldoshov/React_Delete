@@ -102,7 +102,15 @@ const Header = () => {
         text: city?.text,
         image_src: city?.image_src,
     }));
-
+    const deleteCities = (id) => {
+      axios({
+        url:`https://autoapi.dezinfeksiyatashkent.uz/api/cities/${id}`,
+        method:'DELETE',
+        headers: {
+          'Authorization': `Bearer`,
+        }
+      })
+    }
     return (
         <div className='header'>
             <div className='container header-container'>
