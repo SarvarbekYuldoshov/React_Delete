@@ -107,8 +107,14 @@ const Header = () => {
         url:`https://autoapi.dezinfeksiyatashkent.uz/api/cities/${id}`,
         method:'DELETE',
         headers: {
-          'Authorization': `Bearer`,
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
+      })
+      .then((res)=>{
+        message.error("Xatolik yuz berdi")
+      })
+      .catch(err=>{
+        message.error(Xatolik)
       })
     }
     return (
