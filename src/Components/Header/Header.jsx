@@ -88,8 +88,8 @@ const Header = () => {
             title: 'Action',
             render: (text, record) => (
                 <>
-                    <Button type='primary' onClick={() => handleDelete(record)}>Delete</Button>
-                    <Button type='primary' danger onClick={() => handleEdit(record)}>Edit</Button>
+                    <Button type='primary' onClick={() => handleDelete(record)} >Delete</Button>
+                    <Button type='primary' danger onClick={() => deleteCities(cities.id)}>Edit</Button>
                 </>
             ),
         }
@@ -111,10 +111,11 @@ const Header = () => {
         }
       })
       .then((res)=>{
-        message.error("Xatolik yuz berdi")
+        message.error("Uchirildi")
+        getCities()
       })
       .catch(err=>{
-        message.error(Xatolik)
+        message.error("Xatolik")
       })
     }
     return (
